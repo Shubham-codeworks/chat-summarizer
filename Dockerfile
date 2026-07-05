@@ -1,4 +1,4 @@
-FROM python:3.9-slim-bullseye
+FROM python:3.10-slim-bullseye
 
 RUN apt-get update -y && \
     apt-get install -y awscli && \
@@ -19,3 +19,5 @@ COPY . /app
 EXPOSE 8080
 
 CMD ["python3", "app.py"]
+
+
