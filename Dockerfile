@@ -8,9 +8,11 @@ WORKDIR /app
 
 COPY requirements.txt /app/
 
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt && \
-    pip install --no-cache-dir --upgrade accelerate transformers
+RUN pip install --no-cache-dir --upgrade pip
+
+RUN pip install --no-cache-dir transformers accelerate
+
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app
 
